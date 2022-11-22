@@ -1,14 +1,13 @@
-from random import randint
+"""Generate funny names by randomly combining names from 2 separete lists."""
+import random
 
 def generate_name() -> str:
     """Generate a cool name with a first and a second last name."""
     first_names = ["pedro", "juan", "lalo"] # list of first names
     last_names = ["picapiedra", "caza gigantes", "landa"] # list of second names
 
-    first_name_idx = randint(0, len(first_names) - 1)
-    last_name_idx = randint(0, len(last_names) - 1)
-    first_name = first_names[first_name_idx]
-    last_name = last_names[last_name_idx]
+    first_name = random.choice(first_names)
+    last_name = random.choice(last_names)
 
     full_name = f"{first_name} {last_name}"
 
@@ -17,6 +16,7 @@ def generate_name() -> str:
 
 
 def main():
+    """Run main function. Entry point."""
     print("Welcome to cool names, let's generate some cool names!")
 
     while True:
