@@ -1,4 +1,6 @@
+"""Find the palindromes in a given txt file."""
 from load_dictionary import load
+
 
 def is_palindrome(word: str) -> bool:
     """Given a string checks if its a palindrome."""
@@ -10,6 +12,7 @@ def is_palindrome(word: str) -> bool:
         left_idx += 1
         right_idx -= 1
     return True
+
 
 def main():
     """Run the entrypoint of the program."""
@@ -25,7 +28,5 @@ def main():
         print(palindrome)
 
 
-
 if __name__ == "__main__":
     main()
-
