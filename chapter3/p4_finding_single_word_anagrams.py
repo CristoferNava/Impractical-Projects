@@ -22,6 +22,9 @@ def read_file(file_path: str) -> list[str]:
 def is_anagram(word1: str, word2: str) -> bool:
     """Given two words of the same length check if the first word is an anagram
     of the second."""
+    if len(word1) != len(word2):
+        return False
+
     letters_frecuency = {}
     for letter in word1:
         if letter not in letters_frecuency:
@@ -42,12 +45,11 @@ def main():
     file_path = "/Users/cristofernava/Desktop/impratical_projects/chapter3/2of4brif.txt"
     words = read_file(file_path)
 
-    input_word = "friend"
+    input_word = "table"
     anagrams = []
     for word in words:
-        if len(word) == len(input_word):
-            if is_anagram(word, input_word):
-                anagrams.append(word)
+        if is_anagram(word, input_word):
+            anagrams.append(word)
 
     print(anagrams)
     end = time.time()
